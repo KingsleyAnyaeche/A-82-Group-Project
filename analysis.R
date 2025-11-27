@@ -46,3 +46,5 @@ if(!dir.exists("appendix")){
 sink("appendix/Rscript.log")
 print(result_t)
 sink()
+
+colnames(Golf_csv)
