@@ -21,7 +21,7 @@ Golf_csv <- pivot_longer(Golf_csv, cols = Current : New, names_to = "Ball_types"
 colnames(Golf_csv)
  
 #The box plot
-box_p <- ggplot(Golf_csv, aes(x = Ball_types, y = Driving_distance, fill = Ball_types)) + geom_boxplot() + labs( title = "Driving distance by ball type",
+box_p <- ggplot(Golf_csv, aes(x = Ball_types, y = Driving_distance, fill = Ball_types)) + geom_boxplot() + labs( title = "Driving distance of golf ball type",
   x = "Ball types (coated and uncoated)",
   y = "Driving Distance",
 ) +
@@ -46,4 +46,5 @@ if(!dir.exists("appendix")){
 sink("appendix/Rscript.log")
 print(result_t)
 sink()
+
 
