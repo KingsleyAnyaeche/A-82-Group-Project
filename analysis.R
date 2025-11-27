@@ -1,4 +1,4 @@
-#load data set and import functions tidyverse and tidyr
+#load data set and import tidyverse and tidyr library
 library(tidyverse)
 library(tidyr)
 library(readxl)
