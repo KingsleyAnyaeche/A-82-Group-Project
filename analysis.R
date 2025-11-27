@@ -14,7 +14,6 @@ Golf_csv <- Golf_csv [-1, ]
 Golf_csv <- Golf_csv |> mutate(across(everything(), as.numeric))
 
 #confirm the column name
-<<<<<<< HEAD
 colnames(Golf_csv)
 
 #change the dataset column name into ball type(Current/without coating and new/with coating) and driving distance using pivot_longer() function
