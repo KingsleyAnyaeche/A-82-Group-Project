@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #load data set and import tidyverse and tidyr library
-=======
-#load data set without column name
->>>>>>> 128147f897243b7658ce7bc2249e4d3cdcdeaabc
 library(tidyverse)
 library(tidyr)
 library(readxl)
@@ -51,7 +47,3 @@ if(!dir.exists("appendix")){
 sink("appendix/Rscript.log")
 print(result_t)
 sink()
-
-=======
-colnames(Golf_csv)
->>>>>>> 128147f897243b7658ce7bc2249e4d3cdcdeaabc
