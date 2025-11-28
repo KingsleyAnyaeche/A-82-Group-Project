@@ -30,7 +30,8 @@ png("plots/boxplot_distance.png", width = 600, height =400 )
 boxplot(
   Driving_distance ~ Ball_types,
   data = Golf_csv,
-  main = "Driving Distance (m) of Golf Ball Types",
+  main = " BOX PLOT
+  Driving Distance (m) of Golf Ball Types",
   xlab = "Ball types (current/without coating and new/with coating)",
   ylab = "Driving distance (m)",
   col = c("yellow", "red")
@@ -41,7 +42,8 @@ dev.off()
 png("plots/histogram_distance.png", width = 600, height = 400)
 hist(
   Golf_csv$Driving_distance, 
-  main = "Distribution of Golf Ball Driving Distances (m)",
+  main = "HISTOGRAM
+  Distribution of Golf Ball Driving Distances (m)",
   xlab = "Driving distance (m)",
   col = "steelblue",
   border = "black",
