@@ -31,7 +31,7 @@ boxplot(
   Driving_distance ~ Ball_types,
   data = Golf_csv,
   main = "Driving distance of golf ball types",
-  xlab = "Ball types (uncoated/current and coated/new)",
+  xlab = "Ball types (current/without coating and new/with coating)",
   ylab = "Driving distance (m)",
   col = c("yellow", "red")
 )
