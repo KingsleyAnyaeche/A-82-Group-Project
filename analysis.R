@@ -19,22 +19,34 @@ colnames(Golf_csv)
 #change the dataset column name into ball type(Current/without coating and new/with coating) and driving distance using pivot_longer() function
 Golf_csv <- pivot_longer(Golf_csv, cols = Current : New, names_to = "Ball_types", values_to = "Driving_distance" )
 colnames(Golf_csv)
- 
-#The box plot
-box_p <- ggplot(Golf_csv, aes(x = Ball_types, y = Driving_distance, fill = Ball_types)) + geom_boxplot() + labs( title = "Driving distance of golf ball type",
-  x = "Ball types (coated and uncoated)",
-  y = "Driving Distance",
-) +
-  theme_minimal()
-ggsave("plots/boxplot_distance.png", box_p, width = 6, height = 4)
 
-#The histogram
-hist_p <- ggplot(Golf_csv, aes(x = Driving_distance, fill = Ball_types)) + geom_histogram(alpha = 0.6, position = "identity", bin = 10) + labs( title = "Distribution of driving distances",
-  x = "Driving distance",
-  y = "Frequency"
+#Plot folder
+if(!dir.exists("plots")){
+  dir.create("plots")
+}
+
+#The box plot base plot
+png("plots/boxplot_distance.png", width = 600, height =400 )
+boxplot(
+  Driving_distance ~ Ball_types,
+  data = Golf_csv,
+  main = "Driving distance of golf ball types",
+  xlab = "Ball types (uncoated/current and coated/new)",
+  ylab = "Driving distance (m)",
+  col = c("yellow", "red")
 )
-theme_minimal()
-ggsave("plots/histogram_distance.png", hist_p, width = 6, height = 4)
+dev.off()
+
+#The histogram base plot
+png("plots/histogram_distance.png", width = 600, height = 400)
+hist(
+  Golf_csv$Driving_distance, 
+  main = "Distribution of driving distances across golf ball types",
+  xlab = "Driving distance (m)",
+  col = "steelblue",
+  border = "black",
+)
+dev.off()
 
 #The t-test
 result_t <- t.test(Driving_distance ~ Ball_types, data = Golf_csv)
@@ -43,8 +55,8 @@ result_t
 if(!dir.exists("appendix")){
   dir.create("appendix")
 }
+
 sink("appendix/Rscript.log")
 print(result_t)
 sink()
-
 
