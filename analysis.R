@@ -28,6 +28,11 @@ Golf_csv$Golf_ball_types <- recode(
 #Confirmed changes
 table(Golf_csv$Golf_ball_types)
 
+# A plot file for the box plot and histogram
+if(!dir.exists("plots")){
+  dir.create("plots")
+}
+
 #The box plot base plot
 png("plots/boxplot_distance.png", width = 600, height =400 )
 boxplot(
@@ -72,6 +77,7 @@ result_t <- t.test(
   var.equal = TRUE
 )
 
+#Appendix
 if(!dir.exists("appendix")){
   dir.create("appendix")
 }
