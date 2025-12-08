@@ -1,12 +1,12 @@
 
-	Welch Two Sample t-test
+	Two Sample t-test
 
-data:  Driving_distance by Ball_types
-t = 1.3284, df = 76.852, p-value = 0.188
-alternative hypothesis: true difference in means between group Current and group New is not equal to 0
+data:  Driving_distance by Golf_ball_types
+t = -1.3284, df = 78, p-value = 0.1879
+alternative hypothesis: true difference in means between group With coating and group Without coating is not equal to 0
 95 percent confidence interval:
- -1.384937  6.934937
+ -6.933958  1.383958
 sample estimates:
-mean in group Current     mean in group New 
-              270.275               267.500 
+   mean in group With coating mean in group Without coating 
+                      267.500                       270.275 
 
